@@ -1,0 +1,61 @@
+/*===== Fonts =====*/
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800&display=swap');
+
+/* 
+
+Font Weight :
+1. Light 300
+2. Regular 400
+3. Medium 500
+4. Semi-bold 600
+5. Bold 700
+6. Extra-bold 800
+
+*/
+
+/*===== Variables =====*/
+// Theme Color
+$themeColor: #05b794;
+$theme2Color: #138d75;
+$secondaryColor: #8e8f8f;
+$lightColor: #29deba;
+$darkColor: #012a22;
+$darkenColor: #212f3d;
+
+/*===== Mixins =====*/
+// -
+
+/*===== Generals =====*/
+* {
+  font-family: 'Mulish', sans-serif;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  &.overlay {
+    overflow: hidden;
+  }
+}
+
+a {
+  text-decoration: none;
+  transition: 0.3s;
+  color: #000;
+
+  &:hover {
+    color: $themeColor;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+.form-check {
+  input,
+  label {
+    cursor: pointer;
+  }
+}
