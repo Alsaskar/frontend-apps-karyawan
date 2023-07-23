@@ -1,0 +1,61 @@
+@import '../../assets/scss/variables';
+
+.header {
+  .alert {
+    border-radius: 6px;
+    margin-right: 16px;
+    margin-left: 16px;
+
+    // Medium devices (tablets, 768px and up)
+    @media only screen and (min-width: 768px) {
+      border-right: 0;
+      margin-left: 0;
+      margin-right: 0;
+      border-radius: 6px 0 0 6px;
+    }
+  }
+}
+
+.dashboard {
+  .card {
+    .card-header {
+      background-color: transparent;
+      margin: 0 16px;
+      padding-left: 0;
+      padding-right: 0;
+      font-size: 20px;
+      font-weight: 500;
+
+      &.primary {
+        color: darken($themeColor, 10%);
+      }
+    }
+
+    .card-body {
+      display: flex;
+      justify-content: space-between;
+
+      .icon {
+        display: flex;
+        align-items: start;
+
+        i {
+          width: 62px;
+        }
+
+        small {
+          padding-left: 7px;
+          transform: translateY(-3px);
+        }
+      }
+
+      span {
+        display: flex;
+        align-items: end;
+        font-size: 30px;
+        font-weight: 500;
+        transform: translateY(7px);
+      }
+    }
+  }
+}

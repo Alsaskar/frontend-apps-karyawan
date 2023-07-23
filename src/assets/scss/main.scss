@@ -1,56 +1,62 @@
-/*===== Fonts =====*/
-@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800&display=swap');
+@import './variables';
 
-/* 
+a {
+  text-decoration: none;
+}
 
-Font Weight :
-1. Light 300
-2. Regular 400
-3. Medium 500
-4. Semi-bold 600
-5. Bold 700
-6. Extra-bold 800
-
-*/
-
-/*===== Variables =====*/
-// Theme Color
-$themeColor: #05b794;
-$theme2Color: #138d75;
-$secondaryColor: #8e8f8f;
-$lightColor: #29deba;
-$darkColor: #012a22;
-$darkenColor: #212f3d;
-
-/*===== Mixins =====*/
-// -
-
-/*===== Generals =====*/
-* {
-  font-family: 'Mulish', sans-serif;
-  scroll-behavior: smooth;
-  margin: 0;
+ul,
+ol {
+  list-style-type: none;
   padding: 0;
+  margin: 0 !important;
 }
 
 body {
   &.overflow {
-    overflow: hidden;
+    // Small devices (landscape phones, less than 768px)
+    @media only screen and (max-width: 767.98px) {
+      overflow: hidden;
+    }
   }
 }
 
-a {
-  text-decoration: none;
-  transition: 0.3s;
-  color: #000;
+.main-wrapper {
+  position: relative;
 
-  &:hover {
-    color: $themeColor;
+  .content {
+    border-radius: 6px;
+    margin-right: 16px;
+
+    .card {
+      .header-custom {
+        background-color: transparent;
+        margin: 0 16px;
+        padding-left: 0;
+        padding-right: 0;
+        font-size: 50px;
+        font-weight: 500;
+
+        &.primary {
+          // color: darken($themeColor, 10%);
+          color: black;
+        }
+      }
+    }
+
+    // Small devices (landscape phones, less than 768px)
+    @media only screen and (max-width: 767.98px) {
+      margin: 0 16px 16px;
+    }
   }
 }
 
-ul {
-  list-style: none;
+.border-custom {
+  border: 0;
+  border-left: 13px solid transparent;
+
+  &.primary {
+    border-color: darken($themeColor, 10%);
+  }
 }
 
 .form-check {
