@@ -39,7 +39,7 @@ const NavbarCustom = ({ breadcrumb }) => {
           </nav>
         </div>
         <div className="logo-mobile">
-          <h1 className="m-0">ZallPanel</h1>
+          <h3 className="m-0">Apps Karyawan</h3>
         </div>
         <div className="right">
           <p className="text-muted m-0">
