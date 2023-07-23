@@ -1,0 +1,340 @@
+@import '../../assets/scss/variables';
+
+.sidebar-wrapper {
+  position: fixed;
+  transform: translateX(-240px);
+  transition: all 0.4s;
+  opacity: 0;
+  height: 100%;
+
+  &.open {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  &:hover {
+    .sidebar {
+      width: 240px !important;
+
+      .profile {
+        img {
+          width: 70px !important;
+          border-radius: 0 !important;
+        }
+
+        .photo {
+          flex-basis: 70px !important;
+          border-radius: 0 !important;
+        }
+
+        .name {
+          opacity: 1 !important;
+        }
+      }
+
+      .menu {
+        overflow-y: overlay !important;
+
+        ul {
+          span {
+            opacity: 1 !important;
+          }
+
+          .menu-dropdown {
+            .fa-caret-down {
+              opacity: 1 !important;
+            }
+          }
+        }
+      }
+
+      .logo-desktop {
+        justify-content: center !important;
+
+        img {
+          transform: translateX(0) !important;
+        }
+
+        .logo {
+          flex-basis: 60px !important;
+        }
+
+        h3 {
+          opacity: 1 !important;
+        }
+      }
+    }
+  }
+
+  .sidebar {
+    position: sticky;
+    top: 0;
+    width: 240px;
+    transition: 0.4s ease;
+    height: 100vh;
+
+    &.minimized {
+      width: 81px;
+    }
+
+    .logo-desktop {
+      display: none;
+      justify-content: center;
+      align-items: center;
+
+      &.minimized {
+        justify-content: flex-start;
+      }
+
+      img {
+        width: 60px;
+        transform: translateX(0);
+        transition: 0.3s;
+
+        &.minimized {
+          transform: translateX(
+            10px
+          ); // Transform sesuaikan dengan ukuran logo agar bisa pas di tengah-tengah
+        }
+      }
+
+      .logo {
+        flex-basis: 60px;
+        flex-grow: 0;
+        flex-shrink: 0;
+        height: 78px;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &.minimized {
+          flex-basis: 100%;
+        }
+      }
+
+      h3 {
+        opacity: 1;
+        transition: 0.3s;
+        margin-left: 1rem;
+
+        &.minimized {
+          opacity: 0;
+        }
+      }
+
+      // Medium devices (tablets, 768px and up)
+      @media only screen and (min-width: 768px) {
+        display: flex;
+      }
+    }
+
+    .profile {
+      margin: 20px 0;
+      border-radius: 0 6px 0 0;
+      height: 65px;
+      white-space: nowrap;
+
+      img {
+        width: 70px;
+        height: auto;
+        padding: 0;
+        object-fit: cover;
+        object-position: center;
+        transition: 0.3s;
+
+        border-radius: 0;
+
+        &.minimized {
+          width: 79px;
+          border-radius: 0 6px 0 0;
+        }
+      }
+
+      .photo {
+        height: auto;
+        flex-basis: 70px;
+        flex-grow: 0;
+        flex-shrink: 0;
+        display: flex;
+        align-items: end;
+        justify-content: center;
+        padding: 11px 11px 0 11px;
+
+        svg {
+          fill: lighten($themeColor, 10%);
+          width: 100%;
+          height: 100%;
+        }
+
+        &.minimized {
+          flex-basis: 50px;
+          border-radius: 0 6px 0 0;
+        }
+      }
+
+      .name {
+        border-radius: 0 6px 0 0;
+        padding: 7px 12px;
+        opacity: 1;
+        width: 100%;
+        transition: opacity 0.3s;
+        background-color: darken($themeColor, 4%);
+        color: #fff;
+
+        &.minimized {
+          opacity: 0;
+        }
+
+        // Small devices (landscape phones, less than 768px)
+        @media only screen and (max-width: 767.98px) {
+          border-radius: 0;
+        }
+      }
+
+      // Small devices (landscape phones, less than 768px)
+      @media only screen and (max-width: 767.98px) {
+        margin: 0;
+      }
+    }
+
+    .menu {
+      background-color: #fff;
+      overflow-y: overlay;
+      overflow-x: hidden;
+      position: relative;
+
+      &.minimized {
+        overflow-y: hidden;
+      }
+
+      // Scrollbar Custom
+      /* width */
+      &::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      /* Track */
+      &::-webkit-scrollbar-track {
+        background: #f1f1f19d;
+        border-radius: 10px;
+      }
+
+      /* Handle */
+      &::-webkit-scrollbar-thumb {
+        background: #ddd;
+        border-radius: 10px;
+      }
+
+      /* Handle on hover */
+      &::-webkit-scrollbar-thumb:hover {
+        background: #bebebe;
+      }
+
+      ul {
+        a {
+          padding: 10px 14px;
+          transition: 0.3s;
+          color: darken($themeColor, 10%);
+          cursor: pointer;
+          white-space: nowrap;
+          display: block;
+
+          &.active {
+            background-color: $themeColor;
+            color: #fff;
+          }
+
+          &:hover {
+            background-color: $themeColor;
+            color: #fff;
+          }
+        }
+
+        i.icon {
+          width: 21px;
+        }
+
+        span {
+          transition: opacity 0.3s ease;
+          opacity: 1;
+          padding-left: 10px;
+
+          &.minimized {
+            opacity: 0;
+          }
+        }
+
+        .menu-dropdown {
+          padding: 10px 14px;
+          transition: 0.3s;
+          color: darken($themeColor, 10%);
+          cursor: pointer;
+          white-space: nowrap;
+          display: block;
+          background-color: #fff;
+
+          &:hover {
+            background-color: $themeColor;
+            color: #fff;
+          }
+
+          .fa-caret-down {
+            font-size: 20px;
+            margin-top: 2px;
+            right: 15px;
+            position: absolute;
+            transform: rotate(90deg);
+            transition: 0.2s ease;
+            transition-property: opacity, transform;
+            opacity: 1;
+
+            &.active {
+              transform: rotate(0deg);
+            }
+
+            &.minimized {
+              opacity: 0;
+            }
+          }
+        }
+
+        .submenu {
+          background-color: #f6f6f6;
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.3s ease-out;
+
+          &.active {
+            max-height: 500px;
+            overflow: visible;
+            display: block;
+          }
+        }
+      }
+
+      // Small devices (landscape phones, less than 768px)
+      @media only screen and (max-width: 767.98px) {
+        box-shadow: none !important;
+      }
+    }
+
+    // Small devices (landscape phones, less than 768px)
+    @media only screen and (max-width: 767.98px) {
+      padding: 0 !important;
+    }
+  }
+
+  // Small devices (landscape phones, less than 768px)
+  @media only screen and (max-width: 767.98px) {
+    z-index: 3;
+    width: 240px;
+  }
+
+  // Medium devices (tablets, 768px and up)
+  @media only screen and (min-width: 768px) {
+    transform: translate(0);
+    position: relative;
+    opacity: 1;
+  }
+}

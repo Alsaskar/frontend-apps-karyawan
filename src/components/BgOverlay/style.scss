@@ -1,0 +1,20 @@
+.bg-overlay {
+  background-color: hsla(0, 0%, 0%, 0.329);
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  visibility: hidden;
+  z-index: 3;
+  transition: all 0.7s;
+  opacity: 0;
+
+  &.overlay {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  // Medium devices (tablets, 768px and up)
+  @media only screen and (min-width: 768px) {
+    display: none;
+  }
+}
