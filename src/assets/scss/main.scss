@@ -60,3 +60,10 @@ body {
     border-color: darken($themeColor, 10%);
   }
 }
+
+.form-check {
+  input,
+  label {
+    cursor: pointer;
+  }
+}
