@@ -1,12 +1,12 @@
 import { NavLink } from 'react-router-dom';
 import Dropdown from './Dropdown';
-import { useState } from 'react';
 import { bool } from 'prop-types';
+import { useContext } from 'react';
+import { SidebarContext } from '../../Router';
 
 const Menu = ({ sidebarMinimized }) => {
-  const [dropdownActive, setDropdownActive] = useState('');
+  const { dropdownActive, setDropdownActive } = useContext(SidebarContext);
 
-  // Handle Click untuk menu dropdown
   const handleClick = (event) => {
     const active = event.target.id;
 
@@ -26,7 +26,7 @@ const Menu = ({ sidebarMinimized }) => {
       <ul>
         <li>
           <NavLink
-            to="/"
+            to="/dashboard"
             className={({ isActive }) => (isActive ? 'active' : '')}
           >
             <i className="icon fas fa-fw fa-tachometer-alt"></i>
