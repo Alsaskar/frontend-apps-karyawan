@@ -1,5 +1,5 @@
 import { Route, Switch } from 'react-router-dom';
-import { createContext, useState, useEffect, useMemo } from 'react';
+import { createContext, useState, useEffect } from 'react';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import KaryawanData from './pages/Karyawan.Data';
@@ -16,15 +16,6 @@ const Router = () => {
     if (window.matchMedia('(min-width: 768px)').matches)
       setOpenSidebarMobile(true);
   }, []);
-
-  // const sidebar = useMemo(() => {
-  //   return {
-  //     openSidebarMobile: openSidebarMobile,
-  //     setOpenSidebarMobile: setOpenSidebarMobile,
-  //     sidebarMinimized: sidebarMinimized,
-  //     setSidebarMinimized: setSidebarMinimized,
-  //   };
-  // }, [openSidebarMobile, sidebarMinimized]);
 
   return (
     <SidebarContext.Provider
