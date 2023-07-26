@@ -5,6 +5,7 @@ import BgOverlay from '../../components/BgOverlay';
 import Footer from '../../components/Footer';
 import './style.scss';
 import BackToTop from '../../components/BackToTop';
+import { Link } from 'react-router-dom';
 
 const Layout = () => {
   return (
@@ -18,9 +19,14 @@ const Layout = () => {
           <main className="main-wrapper">
             <NavbarCustom
               breadcrumb={
-                <li className="breadcrumb-item active" aria-current="page">
-                  Dashboard
-                </li>
+                <>
+                  <li className="breadcrumb-item" aria-current="page">
+                    <Link to="/home">Home</Link>
+                  </li>
+                  <li className="breadcrumb-item active" aria-current="page">
+                    Dashboard
+                  </li>
+                </>
               }
             />
             <div className="header">
