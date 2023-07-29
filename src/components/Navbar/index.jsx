@@ -18,7 +18,13 @@ const NavbarCustom = ({ breadcrumb }) => {
         <div className="left">
           <div
             className="sidebar-toggle-desktop"
-            onClick={() => setSidebarMinimized(sidebarMinimized ? false : true)}
+            onClick={() => {
+              setSidebarMinimized(sidebarMinimized ? false : true);
+              localStorage.setItem(
+                'sidebar-minimized',
+                sidebarMinimized ? false : true
+              );
+            }}
           >
             <span></span>
             <span></span>

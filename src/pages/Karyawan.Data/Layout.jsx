@@ -12,6 +12,7 @@ import BgOverlay from '../../components/BgOverlay';
 import Sidebar from '../../components/Sidebar';
 import NavbarCustom from '../../components/Navbar';
 import Footer from '../../components/Footer';
+import { Link } from 'react-router-dom';
 
 const Layout = () => {
   return (
@@ -25,9 +26,14 @@ const Layout = () => {
           <main className="main-wrapper">
             <NavbarCustom
               breadcrumb={
-                <li className="breadcrumb-item active" aria-current="page">
-                  Data Karyawan
-                </li>
+                <>
+                  <li className="breadcrumb-item" aria-current="page">
+                    <Link to="/dashboard">Dashboard</Link>
+                  </li>
+                  <li className="breadcrumb-item active" aria-current="page">
+                    Data Karyawan
+                  </li>
+                </>
               }
             />
             <div className="content">

@@ -56,7 +56,7 @@ const Menu = ({ sidebarMinimized }) => {
           </li>
           <li>
             <NavLink
-              to="/karyawan/add"
+              to="/tambah-karyawan"
               className={({ isActive }) => (isActive ? 'active' : '')}
             >
               <i className="icon fas fa-fw fa-plus-square"></i>
